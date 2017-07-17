@@ -12,7 +12,7 @@ ReactDOM.render(
     <Switch>
       <Redirect exact from="/" to="/questions" />
       <Route exact path="/questions" component={QuestionsList} />
-      <Route exact path="/questions/:id" component={QuestionDetail} />
+      <Route path="/questions/:id" component={QuestionDetail} />
     </Switch>
   </BrowserRouter>,
   document.getElementById('root')

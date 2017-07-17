@@ -99,7 +99,7 @@ class QuestionInfo extends Component {
             {this.state.title}
           </Link>
         </div>
-        <time className="question-date" dateTime="{this.state.datetime}">
+        <time className="question-date" dateTime={this.state.datetime}>
           {this.formatDate(this.state.datetime)}
         </time>
         <div className="question-info">
