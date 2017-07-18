@@ -19,7 +19,7 @@ export default class QuestionsList extends Component {
   componentDidMount() {
     var me = this;
     this.serverRequest = axios.get(API_MAP.questions_list, {
-        // In principle, this API supports more than one page, as described in the API:
+        // In principle, this API supports more than one page, as described in the API docs:
         // 
         //   http://docs.pollsapi.apiary.io/#reference/question/questions-collection/list-all-questions
         //
