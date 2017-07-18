@@ -56,6 +56,8 @@ export default class QuestionDetail extends Component {
     axios.get(API_MAP.root + selectedChoice.url)
       .then(function() {
         selectedChoice.votes += 1;
+        selectedChoice.selected = false;
+        alert("Vote cast!");
         me.setState({ choices: choices });
       });
   }
@@ -130,7 +132,7 @@ class ChoiceInfo extends Component {
         <span className="choice-percent">
           {Math.round(this.state.currentVotes / this.state.totalVotes * 100)}%
         </span>
-        <input type="radio" name="choices" value="{this.state.voteUrl}" />
+        <input type="radio" name="choices" value="{this.state.voteUrl}" checked={this.state.selected} />
       </li>
     )
   }
