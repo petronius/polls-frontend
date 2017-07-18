@@ -126,7 +126,7 @@ class ChoiceInfo extends Component {
           {this.state.text}
         </span>
         <span className="choice-votes">
-          {this.state.currentVotes}
+          {this.state.currentVotes} vote{this.state.currentVotes == 1 ? "" : "s"}
         </span>
         <span className="choice-percent">
           {Math.round(this.state.currentVotes / this.state.totalVotes * 100)}%

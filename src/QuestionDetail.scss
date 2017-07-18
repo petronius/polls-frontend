@@ -31,16 +31,22 @@
                 display: inline-block;
                 width: 30%;
                 min-width: 200px;
+                font-weight: bold;
             }
             .choice-votes,
             .choice-percent {
                 display: inline-block;
                 width: 10%;
                 min-width: 100px;
+                color: #AAA;
             }
 
             &.selected {
                 background-color: #AAF;
+                .choice-votes,
+                .choice-percent {
+                    color: white;
+                }
             }
 
         }
