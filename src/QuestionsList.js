@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import moment from 'moment';
 
-import './App.css';
-
 import API_MAP from './APIMap';
+
+import './QuestionsList.css';
 
 export default class QuestionsList extends Component {
 

@@ -19,3 +19,9 @@ $ cd polls-frontend
 $ npm install
 $ npm start
 ```
+
+You'll also need to either build or watch the SCSS files in another terminal:
+
+```
+$ npm run watch-css
+```

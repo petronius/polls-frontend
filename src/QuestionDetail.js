@@ -4,6 +4,8 @@ import classNames from 'classnames';
 
 import API_MAP from './APIMap';
 
+import './QuestionDetail.css';
+
 export default class QuestionDetail extends Component {
 
   constructor(props) {
