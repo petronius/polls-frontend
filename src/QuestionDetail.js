@@ -3,6 +3,7 @@ import axios from 'axios';
 import classNames from 'classnames';
 
 import API_MAP from './APIMap';
+import formatDate from './Util.js';
 
 import './QuestionDetail.css';
 
@@ -28,7 +29,7 @@ export default class QuestionDetail extends Component {
       .then(function(result) {
         me.setState({
           title: result.data.question,
-          datetime: result.data.question.published_at,
+          datetime: result.data.published_at,
           choices: result.data.choices,
           url: result.data.question.url
         });
@@ -78,7 +79,7 @@ export default class QuestionDetail extends Component {
           {this.state.title}
         </div>
         <time className="question-date" dateTime={this.state.datetime}>
-          {this.state.datetime}
+          {formatDate(this.state.datetime)}
         </time>
         <ul className="question-choices">
           {this.state.choices.map(listChoices)}

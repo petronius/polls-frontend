@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import moment from 'moment';
 
 import API_MAP from './APIMap';
+import formatDate from './Util.js';
 
 import './QuestionsList.css';
 
@@ -67,29 +67,6 @@ class QuestionInfo extends Component {
       url: props.question.url
     };
   }
-
-  formatDate(datestring) {
-    var date = moment(datestring),
-        now = moment();
-
-    if (now.diff(date, "days") > 1) {
-
-      return date.format("Do MMMM YYYY, h:mm:ss a");
-
-    } else if (now.diff(date, "minutes") > 60) {
-
-      var diffHours = now.diff(date, "hours");
-      return `${diffHours} hour${diffHours > 1 ? "s" : ""} ago`;
-
-    } else if (now.diff(date, "seconds") > 60) {
-
-      var diffMinutes = now.diff(date, "minutes");
-      return `${diffMinutes} minute${diffMinutes > 1 ? "s" : ""} ago`;
-
-    } else {
-      return "Just now!";
-    }
-  }
   
   render() {
     return (
@@ -100,7 +77,7 @@ class QuestionInfo extends Component {
           </Link>
         </div>
         <time className="question-date" dateTime={this.state.datetime}>
-          {this.formatDate(this.state.datetime)}
+          {formatDate(this.state.datetime)}
         </time>
         <div className="question-info">
           {/* Making the (perhaps bold) assumption that a poll will never
