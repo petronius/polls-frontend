@@ -63,7 +63,10 @@ class QuestionInfo extends Component {
       title: props.question.question,
       datetime: props.question.published_at,
       numberChoices: props.question.choices.length,
-      // We're currently using the same URL scheme as the API
+      // We're currently using the same URL scheme as the API. Would be nicer
+      // if we had a question id (with or without having to parse the URL), and
+      // could dynamically grab the URL format for our app out of the router or
+      // a locally kept mapping of routes.
       url: props.question.url
     };
   }

@@ -21,8 +21,7 @@ export default class QuestionDetail extends Component {
 
   componentDidMount() {
     var me = this,
-        // TODO: this is messy, needs cleanup
-        questionId = this.props.location.pathname.split("/").slice(-1)[0],
+        questionId = this.props.match.params.id,
         questionUrl = API_MAP.question_details.replace(":id", questionId);
 
     this.serverRequest = axios.get(questionUrl)
