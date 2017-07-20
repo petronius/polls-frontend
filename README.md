@@ -30,6 +30,5 @@ $ npm run watch-css
 
 * Proper pagination, page navigation
 * UI for adding new questions
-* More properly responsive styling would be a nice touch
 * Error handlers for failed API requests, maybe a nicer way to centralize all
   of that within in the app.

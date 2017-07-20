@@ -1,3 +1,5 @@
+@import "settings";
+
 .QuestionsList {
 
     h1 {
@@ -6,38 +8,47 @@
         font-weight: bold;
     }
 
-    .QuestionInfo {
+    max-width: 1200px;
+    margin: 0 auto;
 
-        min-width: 250px;
-        max-width: 40%;
-        width: 100%;
-        float: left;
-        
-        padding: 15px;
-        margin: 0 15px 15px 0;
-        border: 1px solid #AAA;
-        border-radius: 5px;
+    .QuestionsList-inner {
 
-        .question-title a {
-            text-decoration: none;
+        @include outer-container(100%);
+
+        .QuestionInfo {
+
+            @include media($desktop) {
+                @include span-columns(3);
+                @include omega(4n);
+            }
+            @include media($tablet) {
+                @include span-columns(4);
+                @include omega(3n);
+            }
+            @include media($mobile) {
+                @include span-columns(12);
+            }
+
+            padding: 15px;
+            border: 1px solid #AAA;
+            margin-top: 15px;
+            border-radius: 5px;
+
+            .question-title a {
+                text-decoration: none;
+            }
+            .question-date {
+                color: #999;
+                font-size: .8rem;
+                margin: 5px 0;
+            }
+
+            .question-info {
+                font-size: .8rem;
+                margin: 5px 0;
+            }
         }
-        .question-date {
-            color: #999;
-            font-size: .8rem;
-            margin: 5px 0;
-        }
 
-        .question-info {
-            font-size: .8rem;
-            margin: 5px 0;
-        }
-    }
-
-    // clearfix
-    &:after {
-        content: "";
-        display: block;
-        clear: both,
     }
 
 }
