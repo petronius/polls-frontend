@@ -5,7 +5,7 @@ import axios from 'axios';
 import API_MAP from './APIMap';
 import formatDate from './Util.js';
 
-import './QuestionsList.css';
+import './QuestionsList.scss';
 
 export default class QuestionsList extends Component {
 

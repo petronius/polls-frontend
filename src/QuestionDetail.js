@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import API_MAP from './APIMap';
 import formatDate from './Util.js';
 
-import './QuestionDetail.css';
+import './QuestionDetail.scss';
 
 export default class QuestionDetail extends Component {
 
