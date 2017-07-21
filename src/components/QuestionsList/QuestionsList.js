@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-import API_MAP from './APIMap';
-import formatDate from './Util.js';
+import API_MAP from 'APIMap.js';
+import formatDate from 'Util.js';
 
 import './QuestionsList.scss';
 

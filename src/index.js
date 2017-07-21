@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 
 import './index.css';
-import QuestionsList from './QuestionsList';
-import QuestionDetail from './QuestionDetail';
-import QuestionCreate from './QuestionCreate';
+import QuestionsList from './components/QuestionsList/QuestionsList';
+import QuestionDetail from './components/QuestionDetail/QuestionDetail';
+import QuestionCreate from './components/QuestionCreateForm/QuestionCreateForm';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(

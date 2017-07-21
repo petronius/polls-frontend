@@ -1,4 +1,9 @@
-@import "settings";
+@import "neat";
+
+// Grid breakpoints
+$mobile: new-breakpoint(max-width 480px);
+$tablet: new-breakpoint(max-width 900px);
+$desktop: new-breakpoint(min-width 900px);
 
 .QuestionsList {
 
