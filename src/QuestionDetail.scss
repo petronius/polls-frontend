@@ -56,7 +56,18 @@
                 }
             }
         }
+
     }
 
+    .nav-under {
+        max-width: 450px;
+        @include clearfix;
+        a {
+            float: left;
+        }
+        button {
+            float: right;
+        }
+    }
 
 }

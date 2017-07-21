@@ -85,9 +85,14 @@ export default class QuestionDetail extends Component {
         <ul className="question-choices">
           {this.state.choices.map(listChoices)}
         </ul>
-        <button onClick={this.vote.bind(this)}>
-          Vote!
-        </button>
+        <div className="nav-under">
+          <a href="/questions">
+            Back to list
+          </a>
+          <button onClick={this.vote.bind(this)}>
+            Vote!
+          </button>
+        </div>
       </div>
     );
   }
