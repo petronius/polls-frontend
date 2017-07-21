@@ -40,7 +40,7 @@ export default class QuestionDetail extends Component {
     var choices = Object.assign([], this.state.choices);
 
     choices.map(function(choice, i) {
-      choice.selected = i == choiceIndex;
+      return choice.selected = i === choiceIndex;
     });
     this.setState({ choices: choices });
 
@@ -63,7 +63,7 @@ export default class QuestionDetail extends Component {
 
   totalVotes() {
     var total = 0;
-    this.state.choices.map(function(c) {
+    this.state.choices.forEach(function(c) {
       total += c.votes;
     });
     return total;
@@ -126,7 +126,7 @@ class ChoiceInfo extends Component {
           {this.state.text}
         </span>
         <span className="choice-votes">
-          {this.state.currentVotes} vote{this.state.currentVotes == 1 ? "" : "s"}
+          {this.state.currentVotes} vote{this.state.currentVotes === 1 ? "" : "s"}
         </span>
         <span className="choice-percent">
           {Math.round(this.state.currentVotes / this.state.totalVotes * 100)}%
