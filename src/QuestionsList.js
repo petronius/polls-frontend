@@ -48,6 +48,13 @@ export default class QuestionsList extends Component {
           {this.state.questions.map(function(question, i) {
             return <QuestionInfo key={i} question={question} />;
           })}
+          <div className="QuestionInfo">
+            <div className="question-title">
+              <Link to="/questions/new">
+                Add a new question
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     );

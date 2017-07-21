@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import classNames from 'classnames';
 
@@ -86,9 +87,9 @@ export default class QuestionDetail extends Component {
           {this.state.choices.map(listChoices)}
         </ul>
         <div className="nav-under">
-          <a href="/questions">
+          <Link to="/questions">
             Back to list
-          </a>
+          </Link>
           <button onClick={this.vote.bind(this)}>
             Vote!
           </button>
