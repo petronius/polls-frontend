@@ -53,7 +53,7 @@ export default class QuestionDetail extends Component {
         choices = Object.assign([], this.state.choices),
         selectedChoice = choices.filter(function(c) { return c.selected === true })[0];
 
-    axios.get(API_MAP.root + selectedChoice.url)
+    axios.post(API_MAP.root + selectedChoice.url)
       .then(function() {
         selectedChoice.votes += 1;
         selectedChoice.selected = false;

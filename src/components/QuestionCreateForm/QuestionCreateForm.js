@@ -24,9 +24,16 @@ export default class QuestionCreateForm extends Component {
     this.setState({ choices: choices });
   }
 
-  updateChoice(idx, e) {
+  updateChoice(idx, e, removeMe) {
     var choices = Object.assign([], this.state.choices);
-    choices[idx] = e.target.value;
+    if (!removeMe) {
+      choices[idx] = e.target.value;
+    } else {
+      choices[idx] = null;
+      choices = choices.filter(function(c, idx) {
+        return c !== null;
+      });
+    }
     this.setState({ choices: choices });
   }
 
@@ -102,6 +109,11 @@ class QuestionCreateFormOption extends Component {
     });
   }
 
+  removeMe(e) {
+    e.preventDefault();
+    this.props.onChange(this.props.idx, e, true);
+  }
+
   render() {
     return (
       <li>
@@ -109,7 +121,7 @@ class QuestionCreateFormOption extends Component {
           value={this.state.choice}
           name="choice[]" 
           onChange={(e) => this.props.onChange(this.props.idx, e)}/>
-        <button onClick={this.removeMe}>
+        <button onClick={this.removeMe.bind(this)}>
           Remove
         </button>
       </li>
